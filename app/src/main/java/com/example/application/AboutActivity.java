@@ -1,34 +1,41 @@
 package com.example.application;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class AboutActivity extends AppCompatActivity {
-
-    TextView textViewLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        textViewLink = findViewById(R.id.textViewUrl);
+        // Set up the toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false); // Hide default title
+        }
 
-        // Set click listener to open GitHub or any link
-        textViewLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Change this to your GitHub later
-                String url = "https://github.com/syafikailyana/ElectricityBill_Syafika";
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                startActivity(intent);
-            }
+        // GitHub button click listener
+        Button githubButton = findViewById(R.id.github_button);
+        githubButton.setOnClickListener(v -> {
+            openGitHubLink();
         });
+
+        // Back to main page button
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(v -> finish());
+    }
+
+    private void openGitHubLink() {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://github.com/syafikailyana/ElectricityBill_Syafika"));
+        startActivity(browserIntent);
     }
 }
