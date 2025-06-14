@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8E1"
+    android:padding="16dp">
+
+    <!-- 1. Logo at Very Top -->
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        android:contentDescription="App Logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <!-- 2. Title Below Logo -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Electricity Bill Estimator"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/app_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+        <ImageButton
+            android:id="@+id/buttonAbout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_profile"
+            android:background="@null"
+            android:contentDescription="Profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <!-- Month Spinner (Now directly under title) -->
+    <Spinner
+        android:id="@+id/spinnerMonth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/months_array"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/editTextUnit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Units Used (kWh)"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/spinnerMonth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/editTextRebate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Rebate (%)"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/editTextUnit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calculate and Save"
+        android:backgroundTint="#FBC02D"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/editTextRebate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+
+    <TextView
+        android:id="@+id/textViewTotalCharges"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Total Charges: RM 0.00"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/buttonCalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+
+    <TextView
+        android:id="@+id/textViewFinalCost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Final Cost: RM 0.00"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewTotalCharges"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+
+    <Button
+        android:id="@+id/buttonView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="View Saved Bills"
+        android:backgroundTint="#FBC02D"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/textViewFinalCost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

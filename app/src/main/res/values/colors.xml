@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_yellow">#FFD54F</color> <!-- Vibrant primary yellow -->
+    <color name="light_yellow">#FFF9C4</color> <!-- Light background -->
+    <color name="dark_yellow">#F57F17</color> <!-- Dark accent -->
+    <color name="button_yellow">#FFC107</color> <!-- Button color -->
+    <color name="text_primary">#212121</color> <!-- Dark text -->
+    <color name="text_secondary">#757575</color> <!-- Secondary text -->
+    <color name="white">#FFFFFF</color>
+    <color name="accent_green">#4CAF50</color> <!-- Complementary accent -->
+</resources>
+
