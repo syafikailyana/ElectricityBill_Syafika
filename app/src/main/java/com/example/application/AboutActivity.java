@@ -25,7 +25,7 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Change this to your GitHub later
-                String url = "https://github.com/yourname/yourproject";
+                String url = "https://github.com/syafikailyana/ElectricityBill_Syafika";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);
             }
